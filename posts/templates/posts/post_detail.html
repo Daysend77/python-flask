@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+post id {{ post.id }}
+{% endblock %}
+
+
+{% block content %}
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.body }}</p>
+
+    <div class="tags">
+    {% for tag in tags %}
+    <span class="badge badge-primary">{{ tag.name }}</span>
+    {% endfor %}
+    </div>
+
+    <form method="POST" action="{{ url_for('posts.post_delete', id=post.id) }}">
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+
+{% endblock %}

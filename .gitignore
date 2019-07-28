@@ -1,0 +1,8 @@
+/venv/*
+new_db
+config.py
+.idea/*
+__pycache__/
+.git/*
+
+*.pyc
